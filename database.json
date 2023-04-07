@@ -2,16 +2,30 @@
     "user_username": [
         {
             "people": {
+                "user_id": 1,
+                "name": "Владимир",
+                "messages": []
+            }
+        },
+        {
+            "people": {
                 "user_id": 2,
                 "name": "Дмитрий",
-                "message": "Привет всем!!"
+                "messages": []
             }
         },
         {
             "people": {
                 "user_id": 3,
                 "name": "Алексей",
-                "message": "Аллло"
+                "messages": []
+            }
+        },
+        {
+            "people": {
+                "user_id": 1,
+                "name": "Владимир",
+                "messages": []
             }
         }
     ]
