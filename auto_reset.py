@@ -1,5 +1,5 @@
 import time
-from database import db
+from database.API.dbase import db
 
 def res():
     #Сброс.

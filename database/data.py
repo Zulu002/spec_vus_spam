@@ -1,4 +1,5 @@
-from db import database
+from API.dbase.db import database
+
 
 data = [[1, "Владимир", "Как дела"],
         [2, "Дмитрий", "Привет всем!!"],
@@ -13,3 +14,5 @@ data = [[1, "Владимир", "Как дела"],
 # database.send_message(2, "Привееет!")
 
 #database.reset_message()
+
+#print(database.read_message(3))

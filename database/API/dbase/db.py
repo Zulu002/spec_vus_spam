@@ -10,9 +10,9 @@ class database:
             json.dump(data, f, indent=3, ensure_ascii=False)
 
     @staticmethod
-    def write_in_data_base(user_id, name, text):
+    def write_in_data_base(user_id, name):
         with open("database.json", encoding='UTF-8') as f2:
-            data = {"people": {"user_id": int(user_id), "name": str(name), "messages": [str(text)]}}
+            data = {"people": {"user_id": int(user_id), "name": str(name), "messages": []}}
             a = json.load(f2)
             a["user_username"].append(data)
         with open("database.json", "w", encoding='UTF-8') as f3:
@@ -56,4 +56,16 @@ class database:
         with open("database.json", "w", encoding="UTF_8") as fl:
             json.dump(f, fl, indent=4, ensure_ascii=False)
 
+    @staticmethod
+    def read_message(user_id):
+        with open("database.json", encoding="UTF-8") as ms:
+            fl = json.load(ms)
+            
+            for k in fl["user_username"]:
+                if k["people"]["user_id"] == user_id:
+                    return k["people"]
 
+    @staticmethod
+    def send_json():
+        with open("database.json", encoding="UTF-8") as f1:
+            return json.load(f1)
