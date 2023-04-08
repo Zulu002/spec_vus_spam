@@ -12,7 +12,7 @@ class database:
     @staticmethod
     def write_in_data_base(user_id, name):
         with open("database.json", encoding='UTF-8') as f2:
-            data = {"people": {"user_id": int(user_id), "name": str(name), "messages": []}}
+            data = {"people": {"user_id": int(user_id), "name": str(name), "messages": [], "reason_ban": []}}
             a = json.load(f2)
             a["user_username"].append(data)
         with open("database.json", "w", encoding='UTF-8') as f3:
@@ -69,3 +69,13 @@ class database:
     def send_json():
         with open("database.json", encoding="UTF-8") as f1:
             return json.load(f1)
+
+    
+    @staticmethod
+    def ban(user_id: int, reason: str):
+        with open("database.json", encoding="UTF-8") as f4:
+            file = json.load(f4)
+        
+            for i in file['user_username']:
+                if i["people"]["user_id"] == user_id:
+                    i["people"]["reason_ban"].append(reason)
