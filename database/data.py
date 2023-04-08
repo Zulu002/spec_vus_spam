@@ -1,6 +1,10 @@
 from API.dbase.db import database
 
 
+# Тестовое заполнение Базы данных.
+# Ниже приведены основные методы для: удаления, заполнения, чтения содержимого БД.
+# В основном файл не используется
+
 data = [[1, "Владимир", "Как дела"],
         [2, "Дмитрий", "Привет всем!!"],
         [3, "Алексей", "Аллло"],
@@ -12,7 +16,7 @@ data = [[1, "Владимир", "Как дела"],
 
 # # #database.delete_message(1) #Удаление значений.
 # database.send_message(2, "выфпамиваае3424234")
-database.add_warning(user_id=3)
+database.add_warning(user_id=3) #Вызов метода выдачи предупреждения.
 #database.reset_message()
 
 #print(database.read_message(3))
