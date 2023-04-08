@@ -10,9 +10,12 @@ class database:
             json.dump(data, f, indent=3, ensure_ascii=False)
 
     @staticmethod
-    def write_in_data_base(user_id, name):
+    def write_in_data_base(user_id, name, message=None):
         with open("database.json", encoding='UTF-8') as f2:
-            data = {"people": {"user_id": int(user_id), "name": str(name), "messages": [], "reason_ban": [], "quantity_warning": 0}}
+            if message:
+                data = {"people": {"user_id": int(user_id), "name": str(name), "messages": [message], "reason_ban": [], "quantity_warning": 0}}
+            else:
+                data = {"people": {"user_id": int(user_id), "name": str(name), "messages": [], "reason_ban": [], "quantity_warning": 0}}
             a = json.load(f2)
             a["user_username"].append(data)
         with open("database.json", "w", encoding='UTF-8') as f3:
@@ -89,6 +92,6 @@ class database:
                 if k["people"]['user_id'] == user_id:
                     k["people"]["quantity_warning"] += 1
 
-        with open("database.json", encoding="UTF-8") as fil:
-            fl = json.dump(file, fil, indent=4, ensure_ascii=False)
+        with open("database.json", "w", encoding="UTF-8") as fil:
+            json.dump(file, fil, indent=4, ensure_ascii=False)
         

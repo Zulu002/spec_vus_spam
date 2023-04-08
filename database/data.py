@@ -10,9 +10,9 @@ data = [[1, "Владимир", "Как дела"],
 # for i in data:
 #     database.write_in_data_base(i[0], i[1], i[-1])
 
-# #database.delete_message(1) #Удаление значений.
-database.send_message(2, "выфпамиваае3424234")
-
+# # #database.delete_message(1) #Удаление значений.
+# database.send_message(2, "выфпамиваае3424234")
+database.add_warning(user_id=3)
 #database.reset_message()
 
 #print(database.read_message(3))

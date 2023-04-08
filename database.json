@@ -4,7 +4,11 @@
             "people": {
                 "user_id": 1,
                 "name": "Владимир",
-                "messages": []
+                "messages": [
+                    "Как дела"
+                ],
+                "reason_ban": [],
+                "quantity_warning": 0
             }
         },
         {
@@ -12,24 +16,32 @@
                 "user_id": 2,
                 "name": "Дмитрий",
                 "messages": [
-                    "Привееет!",
-                    "Ух ты",
-                    "выфпамиваае3424234"
-                ]
+                    "Привет всем!!"
+                ],
+                "reason_ban": [],
+                "quantity_warning": 0
             }
         },
         {
             "people": {
                 "user_id": 3,
                 "name": "Алексей",
-                "messages": []
+                "messages": [
+                    "Аллло"
+                ],
+                "reason_ban": [],
+                "quantity_warning": 1
             }
         },
         {
             "people": {
                 "user_id": 1,
                 "name": "Владимир",
-                "messages": []
+                "messages": [
+                    "АЛЛО"
+                ],
+                "reason_ban": [],
+                "quantity_warning": 0
             }
         }
     ]
