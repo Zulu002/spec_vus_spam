@@ -11,7 +11,7 @@ data = [[1, "Владимир", "Как дела"],
 #     database.write_in_data_base(i[0], i[1], i[-1])
 
 # #database.delete_message(1) #Удаление значений.
-# database.send_message(2, "Привееет!")
+database.send_message(2, "выфпамиваае3424234")
 
 #database.reset_message()
 
