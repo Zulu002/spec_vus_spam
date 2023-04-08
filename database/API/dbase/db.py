@@ -12,7 +12,7 @@ class database:
     @staticmethod
     def write_in_data_base(user_id, name):
         with open("database.json", encoding='UTF-8') as f2:
-            data = {"people": {"user_id": int(user_id), "name": str(name), "messages": [], "reason_ban": []}}
+            data = {"people": {"user_id": int(user_id), "name": str(name), "messages": [], "reason_ban": [], "quantity_warning": 0}}
             a = json.load(f2)
             a["user_username"].append(data)
         with open("database.json", "w", encoding='UTF-8') as f3:
@@ -52,6 +52,7 @@ class database:
             f = json.load(file)
             for i in f["user_username"]:
                 i["people"]["messages"] = []
+                i['people']['quantity_warning'] = 0
         
         with open("database.json", "w", encoding="UTF_8") as fl:
             json.dump(f, fl, indent=4, ensure_ascii=False)
@@ -79,3 +80,15 @@ class database:
             for i in file['user_username']:
                 if i["people"]["user_id"] == user_id:
                     i["people"]["reason_ban"].append(reason)
+    
+    @staticmethod
+    def add_warning(user_id):
+        with open("database.json", encoding='UTF-8') as f:
+            file = json.load(f)
+            for k in file["user_username"]:
+                if k["people"]['user_id'] == user_id:
+                    k["people"]["quantity_warning"] += 1
+
+        with open("database.json", encoding="UTF-8") as fil:
+            fl = json.dump(file, fil, indent=4, ensure_ascii=False)
+        
